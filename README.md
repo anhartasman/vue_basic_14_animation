@@ -20,3 +20,6 @@ Menggunakan CSS saja tidak cukup, vue bisa membantu apakah suatu animasi sudah s
 
 ## 193. Using the Transition Component
 - Mendalami Transition
+
+## 194. CSS Animations with the Transistion Component
+- Menggunakan keyframes
