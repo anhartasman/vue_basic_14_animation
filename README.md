@@ -27,3 +27,7 @@ Menggunakan CSS saja tidak cukup, vue bisa membantu apakah suatu animasi sudah s
 ## 195. Using Custom CSS Class Names
 
 - Memberikan nama pada transition
+
+## 196. Example. Animating a Modal
+
+- Memberikan animasi pada modal
