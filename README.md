@@ -17,3 +17,6 @@ Menggunakan CSS saja tidak cukup, vue bisa membantu apakah suatu animasi sudah s
 
 ### Memainkan animasi dengan bantuan vue js
 - Transition hanya boleh memiliki satu child
+
+## 193. Using the Transition Component
+- Mendalami Transition
