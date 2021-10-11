@@ -6,12 +6,12 @@
   <div class="container">
     <!-- Bisa juga menggunakan enter-to-class sebagai pengganti class enter-to di css
   <transition enter-to-class="some-class" enter-active-class="..."> -->
-  <transition name="para">
+    <!-- Terbaru -->
+  <transition name="para" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @leave="leave" @before-leave="beforeLeave" @after-leave="afterLeave">
     <p v-if="paraIsVisible">This is only sometimes visible...</p>
   </transition>
     <button @click="toggleParagraph">Toggle Paragraph</button>
   </div>
-    <!-- Terbaru -->
   <div class="container"> 
     <transition name="fade-button" mode="in-out">
     <button @click="showUsers" v-if="!usersAreVisible">Show Users</button>
@@ -38,6 +38,30 @@ export default {
     };
   },
   methods: {
+    beforeEnter(el){
+      console.log('beforeEnter');
+      console.log(el);
+    },
+    enter(el){
+      console.log('enter');
+      console.log(el);
+    },
+    afterEnter(el){
+      console.log('afterEnter');
+      console.log(el);
+    },
+    leave(el){
+      console.log('leave');
+      console.log(el);
+    },
+    beforeLeave(el){
+      console.log('beforeLeave');
+      console.log(el);
+    },
+    afterLeave(el){
+      console.log('afterLeave');
+      console.log(el);
+    },
     showUsers(){
       this.usersAreVisible=true;
     },
