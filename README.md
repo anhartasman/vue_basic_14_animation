@@ -47,3 +47,7 @@ Menggunakan CSS saja tidak cukup, vue bisa membantu apakah suatu animasi sudah s
 ## 200. Disabling CSS Transitions
 
 - Mendisable transisi dengan CSS
+
+## 201. Getting Started with Animated Lists
+
+- Pendahuluan animated list
