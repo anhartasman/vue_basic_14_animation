@@ -7,7 +7,16 @@
     <!-- Bisa juga menggunakan enter-to-class sebagai pengganti class enter-to di css
   <transition enter-to-class="some-class" enter-active-class="..."> -->
     <!-- Terbaru -->
-  <transition name="para" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @leave="leave" @before-leave="beforeLeave" @after-leave="afterLeave">
+  <transition name="para" 
+  @before-enter="beforeEnter" 
+  @enter="enter" 
+  @after-enter="afterEnter" 
+  @leave="leave" 
+  @before-leave="beforeLeave" 
+  @after-leave="afterLeave"
+  @enter-cancelled="enterCancelled" 
+  @leave-cancelled="leaveCancelled"
+  >
     <p v-if="paraIsVisible">This is only sometimes visible...</p>
   </transition>
     <button @click="toggleParagraph">Toggle Paragraph</button>
@@ -35,28 +44,60 @@ export default {
     dialogIsVisible: false, 
     paraIsVisible: false,
     usersAreVisible:false,
+    enterInterval:null,
+    leaveInterval:null,
     };
   },
   methods: {
+    enterCancelled(el){
+      console.log('enterCancelled');
+      console.log(el);
+          clearInterval(this.enterInterval);
+    },
+    leaveCancelled(el){
+      console.log('leaveCancelled');
+      console.log(el);
+          clearInterval(this.leaveInterval);
+    },
     beforeEnter(el){
       console.log('beforeEnter');
       console.log(el);
+      el.style.opacity=0;
     },
-    enter(el){
+    enter(el,done){
       console.log('enter');
       console.log(el);
+      let round = 1;
+      this.enterInterval=setInterval(()=>{
+        el.style.opacity=round*0.01;
+        round++;
+        if(round>100){
+          clearInterval(this.enterInterval);
+          done();
+        }
+      },20);
     },
     afterEnter(el){
       console.log('afterEnter');
       console.log(el);
     },
-    leave(el){
-      console.log('leave');
-      console.log(el);
-    },
     beforeLeave(el){
       console.log('beforeLeave');
       console.log(el);
+      el.style.opacity=1;
+    },
+    leave(el,done){
+      console.log('leave');
+      console.log(el);
+      let round = 1;
+      this.leaveInterval=setInterval(()=>{
+        el.style.opacity=1 - round*0.01;
+        round++;
+        if(round>100){
+          clearInterval(this.leaveInterval);
+          done();
+        }
+      },20);
     },
     afterLeave(el){
       console.log('afterLeave');
