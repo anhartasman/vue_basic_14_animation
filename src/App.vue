@@ -7,7 +7,8 @@
     <!-- Bisa juga menggunakan enter-to-class sebagai pengganti class enter-to di css
   <transition enter-to-class="some-class" enter-active-class="..."> -->
     <!-- Terbaru -->
-  <transition name="para" 
+  <transition
+  :css="false" 
   @before-enter="beforeEnter" 
   @enter="enter" 
   @after-enter="afterEnter" 
