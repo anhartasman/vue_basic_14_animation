@@ -55,3 +55,7 @@ Menggunakan CSS saja tidak cukup, vue bisa membantu apakah suatu animasi sudah s
 ## 202. Animating Lists with "transition-group"
 
 - Memberikan animasi pada list
+
+# 203. Animate List Item Movement
+
+- Memberikan animasi saat item di list pindah
