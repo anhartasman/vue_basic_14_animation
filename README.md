@@ -51,3 +51,7 @@ Menggunakan CSS saja tidak cukup, vue bisa membantu apakah suatu animasi sudah s
 ## 201. Getting Started with Animated Lists
 
 - Pendahuluan animated list
+
+## 202. Animating Lists with "transition-group"
+
+- Memberikan animasi pada list
