@@ -59,3 +59,7 @@ Menggunakan CSS saja tidak cukup, vue bisa membantu apakah suatu animasi sudah s
 # 203. Animate List Item Movement
 
 - Memberikan animasi saat item di list pindah
+
+# 204. Animating Route Changes
+
+- Memberikan animasi pada pergantian route
